@@ -1,0 +1,19 @@
+# Testing packages (nbval, flake8, and flake8-nb) are not considered
+# dependencies. They are pip-installed on CI.
+
+name: introduction-to-python
+
+channels:
+  - defaults
+
+dependencies:
+  - pip
+  - python=3.10
+  - pip:
+    - jupyterlab
+    - numpy
+    - matplotlib
+    - pendulum
+    - okpy
+    - pybryt>=0.7.0
+    - pytest

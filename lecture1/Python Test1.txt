@@ -1,0 +1,306 @@
+Exercise 1.1:
+
+print(5*0.6 - 0.5*9.81*0.6**2)
+
+
+
+
+
+
+Exercise 1.2:
+
+metres = 640
+
+# 1 inch = 2.54 cm. Remember to convert 2.54 cm to 0.0254 m here.
+inches = metres/0.0254
+
+# Uncomment and complete the following code. Do not change variable names for testing.
+feet = inches/12
+
+yards = feet/3
+
+miles = yards/1760
+
+
+
+
+
+
+Exercise 1.3:
+
+density = 1.2       # units of kg/m^3
+ball_radius = 0.11  # units of m
+C_D = 0.2           # drag coefficient
+
+v = 50.8            # m/s (fastest recorded speed of football)
+pi = 3.1415926
+
+# Uncomment, fix, and complete the following lines.
+A = pi*ball_radius**2  # cross sectional area of a sphere
+F_d = 0.5*C_D*density*A*v**2
+
+
+
+
+
+
+Exercise 1.4:
+
+
+# Uncomment and complete the code below (and, as always, don't change variable names)
+
+p = 5
+A_0 = 1000
+n = 3
+
+A_n = A_0*(1+p/100)**n
+
+# print(f"The amount of money in the account after {n:d} years is {A_n:.2f} euros")
+
+
+
+
+
+
+Exercise 1.5:
+
+# Uncomment and complete the code below (don't change variable names)
+
+from math import pi, exp, sqrt
+s = 2
+m = 0
+x = 1
+f_x = 1/s/sqrt(2*pi)*exp(-0.5*((x-m)/s)**2)
+
+
+
+
+
+
+Exercise 1.6:
+
+from math import sqrt
+
+a = 2
+b = 1
+c = -2
+
+q = sqrt(b*b - 4*a*c)
+x1 = (-b + q)/2/a
+x2 = (-b - q)/2/a
+
+
+
+
+
+
+Exercise 1.7:
+# Uncomment and complete this code - keep the function name the same for testing purposes.
+
+def gaussian(x, m=0, s=1):
+    f_x = 1/s/sqrt(2*pi)*exp(-0.5*((x-m)/s)**2)
+    return f_x
+
+
+
+
+
+
+Exercise 1.8:
+# Uncomment and complete this code - keep the names the same for testing purposes.
+
+from math import pi, log
+
+def perfect_egg(T0, M=50, rho=1.038, Tw=100, c=3.7, K=5.4e-3, Ty=70):
+    t = M**(2/3)*c*rho**(1/3)/K/pi**2/(4*pi/3)**(2/3)*log(0.76*(T0-Tw)/(Ty-Tw))
+    return t
+
+
+
+
+
+
+Exercise 1.9:
+# Uncomment and complete this code - keep the names the same for testing purposes.
+
+from math import pi, sqrt
+
+def period(a, m_planet, m_sun=2e30, G=6.67e-11):
+    p = sqrt(4*pi**2/G/(m_planet+m_sun)*a**3)
+    return p
+
+P_mars = period(1.5*1.5e11, 0.1*6e24)
+
+P_earth = period(1.5e11, 6e24)
+
+birthdays = 10*P_mars/P_earth
+
+
+
+
+
+
+Exercise 1.10:
+C = 41
+
+print("Case 1: ", C == 40)  # False because C is not equal to 40
+print("Case 2: ", C != 40 and C < 41)  # False
+print("Case 3: ", C != 40 or C < 41)  # True
+print("Case 4: ", not C == 40) #True
+print("Case 5: ", not C > 40) #False
+print("Case 6: ", C <= 41) #True
+print("Case 7: ", not False) #True
+print("Case 8: ", True and False) #False
+print("Case 9: ", False or True) #True
+print("Case 10: ", False or False or False) #False
+print("Case 11: ", True and True and False) #False
+print("Case 12: ", (True and True) or 1 == 2) #True
+
+
+
+
+
+
+Exercise 1.11:
+# Uncomment and complete the code below. Do not change the names of variables!
+
+def num_digits(a):
+    count = 1
+    while a//10 != 0:
+        a = a//10
+        count +=1
+    return a
+
+
+
+
+Exercise 1.12:
+# Uncomment and complete the code below. Do not change the names of variables.
+
+def conversion_table():
+    F = 0
+    count = 0
+    while F <= 100:
+        C = 5/9*(F-32)
+        C_hat = (F-30)/2
+        print(f"{F}, {C}, {C_hat}")
+        F += 10
+        count += 1
+    return count
+
+
+
+
+
+
+Exercise 1.13:
+# Uncomment and complete code. Do not change the variable names.
+
+def odd_numbers(n):
+    i = 1
+    result = []
+    while i < n:
+        result.append(i)
+        i += 2
+    return result
+
+
+
+
+
+
+Exercise 1.14:
+# Uncomment and complete code. Do not change the variable names.
+
+def even_numbers(n):
+    result = []
+    for i in range(0, n, 2):
+        result.append(i)
+    return result
+
+
+
+
+
+
+Exercise 1.15:
+# Uncomment and complete this code - keep the names the same for testing purposes.
+
+def my_sum(x):
+    sum = 0
+    for i in x:
+        sum += i
+    return sum
+
+
+
+
+
+
+Exercise 1.16:
+def distance(t_start, t_end, n, v0=6.0, g=9.81):
+    h = []
+    t = t_start
+    for i in range(n):      
+        h.append(v0*t-(0.5*g*t**2))
+        t += (t_end-t_start)/n
+        print(t)
+
+    print(h)
+    return h
+
+
+
+
+
+
+Exercise 1.17:
+# Uncomment and complete this code - keep the names the same for testing purposes.
+
+def my_cumsum(x):
+    sum_list = []
+    sum = 0
+    for i in x:
+        sum += i
+        sum_list.append(sum)
+    return sum_list
+
+
+
+
+
+
+Exercise 1.18:
+# Uncomment and complete this code - keep the names the same for testing purposes.
+
+def compute_heights(h_0=1.0, h_1=0.3, n=10):
+    h = []
+    for i in range(n):
+        h_temp = h_0*0.9**i
+        h.append(h_temp)
+        if h_temp < h_1:
+            break
+    print(h)
+    return h
+
+
+
+
+
+
+Exercise 1.19:
+# Uncomment and complete this code - keep the names the same for testing purposes.
+
+def calculate_pi(n):
+    odd_numbers = []
+    signs = []
+    for i in range(1,n+1):
+        odd_numbers.append(2*i-1)
+    for i in range(n):
+        signs.append((-1)**i)
+    temp = []
+    for i in range(n):
+        temp.append(signs[i]/odd_numbers[i])
+    pi_number = 4*my_sum(temp)
+     
+    return pi_number
